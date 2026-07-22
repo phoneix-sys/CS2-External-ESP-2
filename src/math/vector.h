@@ -17,6 +17,8 @@ struct view_matrix_t {
 
 struct Vector3 {
     Vector3(float x = 0.f, float y = 0.f, float z = 0.f) noexcept;
+    // Dizi işaretçisinden constructor (const float*)
+    explicit Vector3(const float* data) noexcept : x(data[0]), y(data[1]), z(data[2]) {}
     Vector3 operator-(const Vector3& other) const noexcept;
     Vector3 operator+(const Vector3& other) const noexcept;
     Vector3 operator*(float factor) const noexcept;
